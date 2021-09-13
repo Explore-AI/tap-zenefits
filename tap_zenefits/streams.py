@@ -131,11 +131,86 @@ class TimeDurations(FullTableStream):
                 yield time_duration
             next_url = data.get('next_url', None)
 
+# Added class LaborGroupTypes
+class LaborGroupTypes(FullTableStream):
+    tap_stream_id  = 'labor_group_types'
+    key_properties = ['id']
+    object_type    = 'LABOR_GROUP_TYPES'
+
+    def sync(self, *args, **kwargs):
+        next_url = "True"
+        while next_url:
+            starting_after = get_starting_after(next_url)
+            response = self.client.fetch_labor_group_types(starting_after)
+            data = response.get('data', {})
+            labor_group_types = data.get('data', [])
+            for labor_group_type in labor_group_types:
+                yield labor_group_type
+            next_url = data.get('next_url', None)
+
+# Added class Locations
+class Locations(FullTableStream):
+    tap_stream_id  = 'locations'
+    key_properties = ['id']
+    object_type    = 'LOCATIONS'
+
+    def sync(self, company_id=None, *args, **kwargs):
+        next_url = "True"
+        while next_url:
+            starting_after = get_starting_after(next_url)
+            response = self.client.fetch_locations(
+                company_id,
+                starting_after)
+            data = response.get('data', {})
+            locations = data.get('data', [])
+            for location in locations:
+                yield location
+            next_url = data.get('next_url', None)
+
+# Added class VacationRequests
+class VacationRequests(FullTableStream):
+    tap_stream_id  = 'vacation_requests'
+    key_properties = ['id']
+    object_type    = 'VACATION_REQUESTS'
+
+    def sync(self, *args, **kwargs):
+        next_url = "True"
+        while next_url:
+            starting_after = get_starting_after(next_url)
+            response = self.client.fetch_vacation_requests(starting_after)
+            data = response.get('data', {})
+            vacation_requests = data.get('data', [])
+            for vacation_request in vacation_requests:
+                yield vacation_request
+            next_url = data.get('next_url', None)
+
+# Added class VacationTypes
+class VacationTypes(FullTableStream):
+    tap_stream_id  = 'vacation_types'
+    key_properties = ['id']
+    object_type    = 'VACATION_TYPES'
+
+    def sync(self, *args, **kwargs):
+        next_url = "True"
+        while next_url:
+            starting_after = get_starting_after(next_url)
+            response = self.client.fetch_vacation_types(starting_after)
+            data = response.get('data', {})
+            vacation_types = data.get('data', [])
+            for vacation_type in vacation_types:
+                yield vacation_type
+            next_url = data.get('next_url', None)
+
+# Added extra streams
 STREAMS = {
     'departments': Departments,
     'employments': Employments,
     'pay_stubs': PayStubs,
     'payruns': Payruns,
     'people': People,
-    'time_durations': TimeDurations
+    'time_durations': TimeDurations,
+    'labor_group_types': LaborGroupTypes,
+    'locations': Locations,
+    'vacation_requests': VacationRequests,
+    'vacation_types': VacationTypes
 }

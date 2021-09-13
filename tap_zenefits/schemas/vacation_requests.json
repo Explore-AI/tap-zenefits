@@ -1,0 +1,150 @@
+{
+    "type": [
+      "null",
+      "object"
+    ],
+    "properties": {
+      "status": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "vacation_type": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "url": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "object": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ref_object": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "end_date": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "creator": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "url": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "object": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ref_object": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "url": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "object": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "start_date": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "hours": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "approved_date": {
+        "type": [
+          "null"
+        ]
+      },
+      "reason": {
+        "type": [
+          "null"
+        ]
+      },
+      "person": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "url": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "object": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "ref_object": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "created_date": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "deny_reason": {
+        "type": [
+          "null"
+        ]
+      },
+      "id": {
+        "type": [
+          "null",
+          "string"
+        ]
+      }
+    }
+  }
+  

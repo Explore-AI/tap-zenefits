@@ -38,4 +38,26 @@ class ZenefitsClient:
         params = { "starting_after": starting_after } if starting_after else None
         return self._client.get(url, params=params).json()
 
+# Added extra stream labor_group_types
+    def fetch_labor_group_types(self, starting_after=None):
+        url = f"{self.BASE_URL}/core/labor_group_types"
+        params = { "starting_after": starting_after } if starting_after else None
+        return self._client.get(url, params=params).json()
 
+# Added extra stream locations
+    def fetch_locations(self, company_id, starting_after=None):
+        url = f"{self.BASE_URL}/core/companies/{company_id}/locations"
+        params = { "starting_after": starting_after } if starting_after else None
+        return self._client.get(url, params=params).json()
+
+# Added extra stream vacation_requests
+    def fetch_vacation_requests(self, starting_after=None):
+        url = f"{self.BASE_URL}/time_off/vacation_requests"
+        params = { "starting_after": starting_after } if starting_after else None
+        return self._client.get(url, params=params).json()
+
+# Added extra stream vacation_types
+    def fetch_vacation_types(self, starting_after=None):
+        url = f"{self.BASE_URL}/time_off/vacation_types"
+        params = { "starting_after": starting_after } if starting_after else None
+        return self._client.get(url, params=params).json()
